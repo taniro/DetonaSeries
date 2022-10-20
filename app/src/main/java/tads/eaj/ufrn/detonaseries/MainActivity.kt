@@ -1,11 +1,18 @@
 package tads.eaj.ufrn.detonaseries
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import tads.eaj.ufrn.detonaseries.databinding.ActivityMainBinding
+import java.io.IOException
+import java.net.URL
 
 class MainActivity : AppCompatActivity() {
 

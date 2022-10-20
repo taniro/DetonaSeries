@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DetonaSeries</string>
+    <string name="_int">%d</string>
 </resources>

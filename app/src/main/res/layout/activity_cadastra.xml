@@ -6,6 +6,8 @@
 
     <data>
 
+        <import type="tads.eaj.ufrn.detonaseries.DataBindingConverters"/>
+
         <variable
             name="viewmodel"
             type="tads.eaj.ufrn.detonaseries.CadastraActivityViewModel" />
@@ -26,7 +28,7 @@
             android:ems="10"
             android:hint="Título"
             android:inputType="textPersonName"
-            android:text="@{viewmodel.serie.titulo}"
+            android:text="@={viewmodel.serie.titulo}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/labelCadastraSeries" />
@@ -40,7 +42,7 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:gravity="start|top"
-            android:text="@{viewmodel.serie.sinopse}"
+            android:text="@={viewmodel.serie.sinopse}"
             android:hint="Sinopse"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,6 +58,7 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="Lançamento"
+            android:text="@={DataBindingConverters.convertIntegerToString(viewmodel.serie.lancamento)}"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,6 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:rating="@={viewmodel.serie.classificacao}"
             android:numStars="3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -87,6 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cadastrar"
+            android:onClick="@{() -> viewmodel.handleCadastraSerieButton()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
